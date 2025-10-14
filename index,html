@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IELTSPrep.online — Practice</title>
+  <!-- Link to external stylesheet (create style.css next) -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <h1 class="brand">IELTSPrep.online</h1>
+        <div id="user-info" class="user-info">
+          <!-- Filled by JS after registration -->
+          <button id="register-btn" class="btn small">Register / Login</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <!-- Registration area (shown on first visit) -->
+      <section id="registration" class="card registration-card">
+        <h2>Welcome — Please register</h2>
+        <p class="muted">Enter your name and email to save progress in this browser.</p>
+        <div class="form-row">
+          <input id="reg-name" type="text" placeholder="Your name" />
+          <input id="reg-email" type="email" placeholder="Email address" />
+        </div>
+        <div class="form-row">
+          <button id="reg-save" class="btn">Register</button>
+          <button id="reg-demo" class="btn alt">Use demo</button>
+        </div>
+      </section>
+
+      <!-- Main nav -->
+      <nav class="tabs" role="navigation" aria-label="Main navigation">
+        <button class="tab active" data-tab="listening">Listening</button>
+        <button class="tab" data-tab="reading">Reading</button>
+        <button class="tab" data-tab="writing">Writing</button>
+        <button class="tab" data-tab="speaking">Speaking</button>
+      </nav>
