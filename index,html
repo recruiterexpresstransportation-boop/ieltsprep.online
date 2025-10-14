@@ -115,5 +115,4 @@
 
   <!-- Link to main JS (I'll provide this later as 'listening', 'reading', etc. JS blocks) -->
   <script src="app.js" defer></script>
-</body>
-</html>
+
