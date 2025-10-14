@@ -44,3 +44,75 @@
         <button class="tab" data-tab="writing">Writing</button>
         <button class="tab" data-tab="speaking">Speaking</button>
       </nav>
+  <!-- Listening -->
+      <section id="listening" class="card section-content">
+        <h2>Listening — 40 questions</h2>
+        <p class="muted">Click an option to answer. Selected option highlights. After completing all, press <strong>Check Answers</strong>.</p>
+        <div id="listening-questions" class="questions-grid">
+          <!-- JS will populate 40 question blocks here -->
+        </div>
+        <div class="controls">
+          <button id="listening-check" class="btn">Check Answers</button>
+          <div id="listening-status" class="status">Answered: <span id="listening-answered">0</span>/40</div>
+          <div id="listening-result" class="result" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- Reading -->
+      <section id="reading" class="card section-content hidden">
+        <h2>Reading — 40 questions</h2>
+        <p class="muted">Same interaction as Listening.</p>
+        <div id="reading-questions" class="questions-grid">
+          <!-- JS will populate 40 question blocks here -->
+        </div>
+        <div class="controls">
+          <button id="reading-check" class="btn">Check Answers</button>
+          <div id="reading-status" class="status">Answered: <span id="reading-answered">0</span>/40</div>
+          <div id="reading-result" class="result" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- Writing -->
+      <section id="writing" class="card section-content hidden">
+        <h2>Writing — Task 1 & Task 2</h2>
+        <p class="muted">20 Task 1 topics and 20 Task 2 topics. Your writing is saved automatically in local storage.</p>
+        <div class="writing-columns">
+          <div class="writing-col">
+            <h3>Task 1 (20 topics)</h3>
+            <div id="task1-list" class="task-list">
+              <!-- JS will render 20 topics with textareas -->
+            </div>
+          </div>
+          <div class="writing-col">
+            <h3>Task 2 (20 topics)</h3>
+            <div id="task2-list" class="task-list">
+              <!-- JS will render 20 topics with textareas -->
+            </div>
+          </div>
+        </div>
+        <div class="controls">
+          <button id="writing-clear" class="btn alt">Clear All Writing</button>
+        </div>
+      </section>
+
+      <!-- Speaking -->
+      <section id="speaking" class="card section-content hidden">
+        <h2>Speaking — Recent topics</h2>
+        <p class="muted">20 recent topics with sample answers. Click to expand each sample.</p>
+        <div id="speaking-list" class="speaking-grid">
+          <!-- JS will populate 20 topic blocks with samples -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Made with ❤️ — ieltsprep.online (demo). Data saved locally in your browser.</small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Link to main JS (I'll provide this later as 'listening', 'reading', etc. JS blocks) -->
+  <script src="app.js" defer></script>
+</body>
+</html>
