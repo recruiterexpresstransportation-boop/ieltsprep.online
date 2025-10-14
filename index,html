@@ -1,118 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IELTSPrep.online — Practice</title>
-  <!-- Link to external stylesheet (create style.css next) -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTSPrep.online | IELTS Preparation Website</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Font (optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div id="app">
-    <!-- Header -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <h1 class="brand">IELTSPrep.online</h1>
-        <div id="user-info" class="user-info">
-          <!-- Filled by JS after registration -->
-          <button id="register-btn" class="btn small">Register / Login</button>
-        </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">IELTSPrep.online</div>
+      <div id="userInfo" class="user-info"></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" data-target="listeningSection">Listening</div>
+      <div class="tab" data-target="readingSection">Reading</div>
+      <div class="tab" data-target="writingSection">Writing</div>
+      <div class="tab" data-target="speakingSection">Speaking</div>
+    </div>
+
+    <!-- Listening -->
+    <section id="listeningSection" class="section card">
+      <h2>Listening Practice (40 Questions)</h2>
+      <div class="questions-grid"></div>
+      <div class="controls">
+        <button class="btn check-btn">Check Answers</button>
+        <div class="result"></div>
       </div>
-    </header>
+    </section>
 
-    <main class="container main-content">
-      <!-- Registration area (shown on first visit) -->
-      <section id="registration" class="card registration-card">
-        <h2>Welcome — Please register</h2>
-        <p class="muted">Enter your name and email to save progress in this browser.</p>
-        <div class="form-row">
-          <input id="reg-name" type="text" placeholder="Your name" />
-          <input id="reg-email" type="email" placeholder="Email address" />
-        </div>
-        <div class="form-row">
-          <button id="reg-save" class="btn">Register</button>
-          <button id="reg-demo" class="btn alt">Use demo</button>
-        </div>
-      </section>
-
-      <!-- Main nav -->
-      <nav class="tabs" role="navigation" aria-label="Main navigation">
-        <button class="tab active" data-tab="listening">Listening</button>
-        <button class="tab" data-tab="reading">Reading</button>
-        <button class="tab" data-tab="writing">Writing</button>
-        <button class="tab" data-tab="speaking">Speaking</button>
-      </nav>
-
-      <!-- Listening -->
-      <section id="listening" class="card section-content">
-        <h2>Listening — 40 questions</h2>
-        <p class="muted">Click an option to answer. Selected option highlights. After completing all, press <strong>Check Answers</strong>.</p>
-        <div id="listening-questions" class="questions-grid">
-          <!-- JS will populate 40 question blocks here -->
-        </div>
-        <div class="controls">
-          <button id="listening-check" class="btn">Check Answers</button>
-          <div id="listening-status" class="status">Answered: <span id="listening-answered">0</span>/40</div>
-          <div id="listening-result" class="result" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <!-- Reading -->
-      <section id="reading" class="card section-content hidden">
-        <h2>Reading — 40 questions</h2>
-        <p class="muted">Same interaction as Listening.</p>
-        <div id="reading-questions" class="questions-grid">
-          <!-- JS will populate 40 question blocks here -->
-        </div>
-        <div class="controls">
-          <button id="reading-check" class="btn">Check Answers</button>
-          <div id="reading-status" class="status">Answered: <span id="reading-answered">0</span>/40</div>
-          <div id="reading-result" class="result" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <!-- Writing -->
-      <section id="writing" class="card section-content hidden">
-        <h2>Writing — Task 1 & Task 2</h2>
-        <p class="muted">20 Task 1 topics and 20 Task 2 topics. Your writing is saved automatically in local storage.</p>
-        <div class="writing-columns">
-          <div class="writing-col">
-            <h3>Task 1 (20 topics)</h3>
-            <div id="task1-list" class="task-list">
-              <!-- JS will render 20 topics with textareas -->
-            </div>
-          </div>
-          <div class="writing-col">
-            <h3>Task 2 (20 topics)</h3>
-            <div id="task2-list" class="task-list">
-              <!-- JS will render 20 topics with textareas -->
-            </div>
-          </div>
-        </div>
-        <div class="controls">
-          <button id="writing-clear" class="btn alt">Clear All Writing</button>
-        </div>
-      </section>
-
-      <!-- Speaking -->
-      <section id="speaking" class="card section-content hidden">
-        <h2>Speaking — Recent topics</h2>
-        <p class="muted">20 recent topics with sample answers. Click to expand each sample.</p>
-        <div id="speaking-list" class="speaking-grid">
-          <!-- JS will populate 20 topic blocks with samples -->
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <small>Made with ❤️ — ieltsprep.online (demo). Data saved locally in your browser.</small>
+    <!-- Reading -->
+    <section id="readingSection" class="section card hidden">
+      <h2>Reading Practice (40 Questions)</h2>
+      <div class="questions-grid"></div>
+      <div class="controls">
+        <button class="btn check-btn">Check Answers</button>
+        <div class="result"></div>
       </div>
-    </footer>
+    </section>
+
+    <!-- Writing -->
+    <section id="writingSection" class="section card hidden">
+      <h2>Writing Practice</h2>
+      <div class="writing-columns">
+        <div class="task-list" id="task1List"></div>
+        <div class="task-list" id="task2List"></div>
+      </div>
+    </section>
+
+    <!-- Speaking -->
+    <section id="speakingSection" class="section card hidden">
+      <h2>Speaking Topics</h2>
+      <div id="speakingGrid" class="speaking-grid"></div>
+    </section>
   </div>
 
-  <!-- Link to main JS (I'll provide this later as 'listening', 'reading', etc. JS blocks) -->
-  <script src="app.js" defer></script>
+  <footer class="site-footer">
+    <p>© 2025 IELTSPrep.online — Practice for success</p>
+  </footer>
 
+  <script src="app.js"></script>
+</body>
+</html>
